@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rate Moderator Form</title>
+</head>
+<body>
+  <h1>Rate Moderator Form</h1>
+
+  <form action="/submit-form" method="POST" netlify>
+    <label for="moderator">Which moderator are you rating?</label>
+    <input type="text" id="moderator" name="moderator" required>
+
+    <label for="rating">How would you rate this moderator's actions?</label>
+    <select id="rating" name="rating" required>
+      <option value="">Select rating</option>
+      <option value="5">Excellent</option>
+      <option value="4">Very Good</option>
+      <option value="3">Good</option>
+      <option value="2">Fair</option>
+      <option value="1">Poor</option>
+    </select>
+
+    <label for="interaction_rating">How would you rate this interaction?</label>
+    <select id="interaction_rating" name="interaction_rating" required>
+      <option value="">Select rating</option>
+      <option value="5">Excellent</option>
+      <option value="4">Very Good</option>
+      <option value="3">Good</option>
+      <option value="2">Fair</option>
+      <option value="1">Poor</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
