@@ -2,10 +2,60 @@
 <html>
 <head>
   <title>Rate Moderator Form</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <style>
-    /* Paste the CSS code provided in the previous response here */
-    /* ... */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4e9d5; /* Light Brown */
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff; /* White */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .container label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .container input, .container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container button {
+      padding: 10px 20px;
+      background-color: #8b5d2e; /* Darker Brown */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #634227; /* Slightly Darker Brown on hover */
+    }
+
+    .container button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +89,5 @@
       <button type="submit">Submit</button>
     </form>
   </div>
-
 </body>
 </html>
