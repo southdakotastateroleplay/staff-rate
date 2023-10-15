@@ -38,19 +38,17 @@
     }
 
     .login-buttons .button {
-      width: 100%;
-      padding: 10px 20px;
-      background: url('button.png') no-repeat center center;
-      background-size: cover;
+      padding: 15px 30px;
+      background-color: #b28968; /* Light Brown */
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-bottom: 10px;
+      margin: 0 10px;
     }
 
     .login-buttons .button:hover {
-      /* Add hover styles if needed */
+      background-color: #a17852; /* Slightly Darker Brown on hover */
     }
   </style>
   <!-- Include the widget -->
@@ -63,15 +61,10 @@
     <a href="/account">Account</a>
   </div>
 
-  <!-- Add a menu:
-   Log in / Sign up - when the user is not logged in
-   Username / Log out - when the user is logged in
-  -->
-  <div data-netlify-identity-menu></div>
-
-  <!-- Add login buttons -->
+  <!-- Add login and signup buttons -->
   <div class="login-buttons">
-    <button class="button" data-netlify-identity-button>Login with SDSRP Identity</button>
+    <button class="button" data-netlify-identity-button>Login</button>
+    <button class="button" data-netlify-identity-button data-netlify-identity-action="signup">Signup</button>
   </div>
 </body>
 </html>
