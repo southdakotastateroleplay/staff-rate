@@ -31,45 +31,26 @@
       font-size: 24px;
     }
 
-    .login-form {
+    .login-buttons {
       max-width: 400px;
       margin: 20px auto;
-      background-color: #fff; /* White */
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    .login-form label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .login-form input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .login-form button {
+    .login-buttons .button {
       width: 100%;
       padding: 10px 20px;
-      background-color: #8b5d2e; /* Darker Brown */
+      background: url('button.png') no-repeat center center;
+      background-size: cover;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin-bottom: 10px;
     }
 
-    .login-form button:hover {
-      background-color: #634227; /* Slightly Darker Brown on hover */
-    }
-
-    .login-form button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
+    .login-buttons .button:hover {
+      /* Add hover styles if needed */
     }
   </style>
   <!-- Include the widget -->
@@ -88,9 +69,9 @@
   -->
   <div data-netlify-identity-menu></div>
 
-  <!-- Add a simpler button:
-    Simple button that will open the modal.
-  -->
-  <div data-netlify-identity-button>Login with SDSRP Identity</div>
+  <!-- Add login buttons -->
+  <div class="login-buttons">
+    <button class="button" data-netlify-identity-button>Login with SDSRP Identity</button>
+  </div>
 </body>
 </html>
