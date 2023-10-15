@@ -87,7 +87,7 @@
 <body>
   <div class="navbar">
     <a href="#">Home</a>
-    <a href="account.html">Login</a>
+    <span id="auth-link"></span>
   </div>
 
   <div class="container">
@@ -130,6 +130,19 @@
       <p>Your submission has been received. We appreciate your feedback.</p>
     </div>
   </div>
+
+  <script src="https://unpkg.com/netlify-identity-widget@^4.4.8/dist/netlify-identity.js"></script>
+  <script>
+    netlifyIdentity.on('init', (user) => {
+      if (user) {
+        document.getElementById('auth-link').innerHTML = '<a href="account.html">Account</a>';
+      } else {
+        document.getElementById('auth-link').innerHTML = '<a href="login.html">Login</a>';
+      }
+    });
+
+    netlifyIdentity.init();
+  </script>
 
   <script>
     function showThankYouMessage() {
