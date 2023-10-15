@@ -95,7 +95,31 @@
 
     <!-- Form -->
     <form id="rateForm" action="javascript:void(0);" onsubmit="showThankYouMessage()">
-      <!-- Rest of the form code remains unchanged -->
+      <label for="moderator">Which moderator are you rating?</label>
+      <input type="text" id="moderator" name="moderator" required>
+
+      <label for="rating">How would you rate this moderator's actions?</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select rating</option>
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+      </select>
+
+      <label for="interaction_rating">How would you rate this interaction?</label>
+      <select id="interaction_rating" name="interaction_rating" required>
+        <option value="">Select rating</option>
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+      </select>
+
+      <label for="reason">Why are you rating this moderator?</label>
+      <textarea id="reason" name="reason" rows="4" required></textarea>
 
       <button type="submit">Submit</button>
     </form>
