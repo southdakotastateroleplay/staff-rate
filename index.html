@@ -94,7 +94,12 @@
     <h1>Rate Moderator Form</h1>
 
     <!-- Form -->
-    <form id="rateForm" action="javascript:void(0);" onsubmit="showThankYouMessage()">
+    <form id="rateForm" action="/thank-you.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="rate-moderator-form" />
+      <div style="display: none;">
+        <label for="bot-field">Don't fill this out if you're human: <input name="bot-field" /></label>
+      </div>
+
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
@@ -126,22 +131,6 @@
 
       <button type="submit">Submit</button>
     </form>
-
-    <!-- Thank You Message -->
-    <div class="thank-you-message">
-      <h2>Thank You for Submitting!</h2>
-      <p>Your submission has been received. We appreciate your feedback.</p>
-    </div>
   </div>
-
-  <script>
-    function showThankYouMessage() {
-      var form = document.getElementById('rateForm');
-      form.style.display = 'none';
-
-      var thankYouMessage = document.querySelector('.thank-you-message');
-      thankYouMessage.style.display = 'block';
-    }
-  </script>
 </body>
 </html>
