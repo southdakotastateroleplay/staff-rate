@@ -16,13 +16,12 @@
       color: white;
       padding: 10px 20px;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between; /* Move text to the right */
     }
 
     .navbar a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
     }
 
     .container {
@@ -75,8 +74,12 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="#">Home</a>
-    <a href="account.html">Account</a>
+    <div>
+      <a href="#">Home</a>
+      <a href="account.html">Account</a>
+    </div>
+    <!-- Login button -->
+    <div data-netlify-identity-button>Login</div>
   </div>
 
   <div class="container">
