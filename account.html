@@ -7,6 +7,24 @@
     /* Custom styles for SDSRP Account */
     body {
       background-color: #f4e9d5; /* Light Brown */
+      margin: 0; /* Remove default margin */
+    }
+
+    .navbar {
+      background-color: #8b5d2e; /* Darker Brown for navbar */
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
     }
 
     h1 {
@@ -58,6 +76,12 @@
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/account">Account</a>
+  </div>
+
   <!-- Add a menu:
    Log in / Sign up - when the user is not logged in
    Username / Log out - when the user is logged in
