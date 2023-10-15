@@ -34,30 +34,23 @@
       font-size: 24px;
     }
 
-    .login-buttons {
-      max-width: 400px;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .login-buttons .button {
+    .login-button {
       padding: 15px 30px;
       background-color: #b28968; /* Light Brown */
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin: 0 10px;
       font-family: 'Roboto', sans-serif; /* Use Roboto font */
     }
 
-    .login-buttons .button span {
+    .login-button span {
       display: block;
       width: 100%;
       height: 100%;
     }
 
-    .login-buttons .button:hover {
+    .login-button:hover {
       background-color: #a17852; /* Slightly Darker Brown on hover */
     }
   </style>
@@ -71,10 +64,7 @@
     <a href="/account">Account</a>
   </div>
 
-  <!-- Add login and signup buttons -->
-  <div class="login-buttons">
-    <button class="button" data-netlify-identity-button><span></span></button>
-    <button class="button" data-netlify-identity-button data-netlify-identity-action="signup"><span></span></button>
-  </div>
+  <!-- Add a login button -->
+  <div class="login-button" data-netlify-identity-button><span>Login</span></div>
 </body>
 </html>
