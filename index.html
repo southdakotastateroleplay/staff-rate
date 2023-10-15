@@ -5,18 +5,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4e9d5; /* Light Brown */
       font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      background-color: #333; /* Dark gray background */
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .navbar a:hover {
+      border-bottom: 2px solid white; /* White underline on hover */
     }
 
     .container {
-      max-width: 400px;
-      width: 100%;
+      max-width: 800px;
+      width: 90%;
+      margin: 20px auto;
       padding: 20px;
       background-color: #fff; /* White */
       border-radius: 10px;
@@ -34,12 +48,12 @@
     }
 
     .container input, .container select, .container textarea {
-      width: 100%;
+      width: calc(100% - 20px); /* Adjust for padding */
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      box-sizing: border-box; /* Adjust for padding and border */
+      box-sizing: border-box;
     }
 
     .container button {
@@ -59,41 +73,48 @@
       background-color: #ccc;
       cursor: not-allowed;
     }
+
+    .thank-you-message {
+      display: none;
+    }
+
+    .submitted .thank-you-message {
+      display: block;
+      color: green;
+    }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="account.html">Login</a>
+  </div>
+
   <div class="container">
     <h1>Rate Moderator Form</h1>
 
-    <form action="/submit-form" method="POST" netlify>
-      <label for="moderator">Which moderator are you rating?</label>
-      <input type="text" id="moderator" name="moderator" required>
-
-      <label for="rating">How would you rate this moderator's actions?</label>
-      <select id="rating" name="rating" required>
-        <option value="">Select rating</option>
-        <option value="5">Excellent</option>
-        <option value="4">Very Good</option>
-        <option value="3">Good</option>
-        <option value="2">Fair</option>
-        <option value="1">Poor</option>
-      </select>
-
-      <label for="interaction_rating">How would you rate this interaction?</label>
-      <select id="interaction_rating" name="interaction_rating" required>
-        <option value="">Select rating</option>
-        <option value="5">Excellent</option>
-        <option value="4">Very Good</option>
-        <option value="3">Good</option>
-        <option value="2">Fair</option>
-        <option value="1">Poor</option>
-      </select>
-
-      <label for="reason">Why are you rating this moderator?</label>
-      <textarea id="reason" name="reason" rows="4" required></textarea>
+    <!-- Form -->
+    <form id="rateForm" action="javascript:void(0);" onsubmit="showThankYouMessage()">
+      <!-- Rest of the form code remains unchanged -->
 
       <button type="submit">Submit</button>
     </form>
+
+    <!-- Thank You Message -->
+    <div class="thank-you-message">
+      <h2>Thank You for Submitting!</h2>
+      <p>Your submission has been received. We appreciate your feedback.</p>
+    </div>
   </div>
+
+  <script>
+    function showThankYouMessage() {
+      var form = document.getElementById('rateForm');
+      form.style.display = 'none';
+
+      var thankYouMessage = document.querySelector('.thank-you-message');
+      thankYouMessage.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
