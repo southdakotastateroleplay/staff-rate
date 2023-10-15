@@ -56,6 +56,15 @@
     .login-button:hover {
       background-color: #a17852; /* Slightly Darker Brown on hover */
     }
+
+    .submission-list {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff; /* White */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
   </style>
   <!-- Include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -69,5 +78,44 @@
 
   <!-- Add a login button -->
   <div class="login-button" data-netlify-identity-button><span></span></div>
+
+  <!-- Submission List for Logged-in Users -->
+  <div class="submission-list" id="submission-list">
+    <h2>Your Form Submissions</h2>
+    <!-- This is where the previous submissions will be displayed -->
+  </div>
+
+  <script>
+    const submissionList = document.getElementById('submission-list');
+
+    // Function to fetch and display submissions for the logged-in user
+    async function displaySubmissions() {
+      // Ensure the user is logged in
+      const user = netlifyIdentity.currentUser();
+      if (!user) {
+        return;
+      }
+
+      // Fetch form submissions associated with the logged-in user (replace 'YOUR_FORM_NAME' with your actual form name)
+      const response = await fetch(`/.netlify/functions/get-submissions?email=${user.email}&formName=YOUR_FORM_NAME`);
+      const submissions = await response.json();
+
+      // Display the submissions
+      submissionList.innerHTML = `
+        <ul>
+          ${submissions.map(submission => `<li>${JSON.stringify(submission)}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    // Listen for authentication state changes
+    netlifyIdentity.on('login', () => {
+      displaySubmissions();
+    });
+
+    netlifyIdentity.on('logout', () => {
+      submissionList.innerHTML = ''; // Clear the submissions when logged out
+    });
+  </script>
 </body>
 </html>
